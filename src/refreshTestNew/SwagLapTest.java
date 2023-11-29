@@ -11,7 +11,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
-public class SwagLapTest extends Parameters {
+public class SwagLapTest extends Information {
 	WebDriver driver = new ChromeDriver();
 
 	@BeforeTest
@@ -20,8 +20,8 @@ public class SwagLapTest extends Parameters {
 		driver.get(myUrl);
 		WebElement UserNameElemnt = driver.findElement(By.id("user-name"));
 		WebElement PasswordElemnt = driver.findElement(By.id("password"));
-		UserNameElemnt.sendKeys(UserName);
-		PasswordElemnt.sendKeys(Passwoard);
+		UserNameElemnt.sendKeys(UserNamesauce);
+		PasswordElemnt.sendKeys(PassWord);
 		driver.findElement(By.id("login-button")).click();
 		driver.manage().window().maximize();
 	}
@@ -41,7 +41,7 @@ public class SwagLapTest extends Parameters {
 				ItemsPrice.get(i).getText();
 				System.out.println(ItemsPrice.get(i).getText());
 				String PriceEND = ItemsPrice.get(i).getText().replace("$", " ");
-	double PriceAsDouble = Double.parseDouble(PriceEND);
+				double PriceAsDouble = Double.parseDouble(PriceEND);
 	double TaxValue = 0.10;
 	double finelPrice = PriceAsDouble * TaxValue + PriceAsDouble;
 	if ((int)finelPrice % 2 == 0) {
